@@ -4,14 +4,15 @@ import { Icon } from './components/icons'
 import { Reveal } from './components/Reveal'
 import { projects, services, stats } from './data/site'
 
-const categories = ['All', 'Brand', 'Marketing', 'Web'] as const
+const categories = ['All', 'Brand', 'Marketing', 'Web', 'Social'] as const
 type Category = (typeof categories)[number]
 
 const marqueeItems = [
   'Brand Awareness',
   'Marketing',
-  'Websites',
-  'Apps',
+  'SEO',
+  'Social Media',
+  'Websites & Apps',
   'Ontario, Canada',
 ]
 
@@ -38,11 +39,12 @@ function App() {
         </a>
         <nav className="nav__links" aria-label="Primary">
           <a href="#services">Services</a>
+          <a href="#pricing">Who we help</a>
           <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </nav>
         <a className="btn btn--primary nav__cta" href="#contact">
-          Let's talk
+          Add your project
         </a>
       </header>
 
@@ -62,15 +64,15 @@ function App() {
           </Reveal>
           <Reveal delay={160}>
             <p className="hero__lead">
-              Galbore Media is a bold creative studio building brand awareness,
-              marketing that performs, and websites &amp; apps people love — for
-              ambitious teams across Ontario and beyond.
+              Galbore Media is a bold, affordable creative studio for small
+              businesses and not-for-profits — brand awareness, marketing, SEO,
+              social media, and websites &amp; apps, all in one place.
             </p>
           </Reveal>
           <Reveal delay={240}>
             <div className="hero__actions">
               <a className="btn btn--primary btn--lg" href="#contact">
-                Start a project
+                Add your project
               </a>
               <a className="btn btn--ghost btn--lg" href="#work">
                 See our work
@@ -108,13 +110,13 @@ function App() {
             <div className="section__head">
               <p className="eyebrow">What we do</p>
               <h2>
-                Three ways we help you <span className="grad">grow</span>
+                Everything you need to <span className="grad">grow</span>
               </h2>
             </div>
           </Reveal>
           <div className="services">
             {services.map((service, i) => (
-              <Reveal delay={i * 120} key={service.title}>
+              <Reveal delay={i * 100} key={service.title}>
                 <article className="service">
                   <div className="service__glow" aria-hidden="true" />
                   <div className="service__badge">
@@ -126,6 +128,29 @@ function App() {
               </Reveal>
             ))}
           </div>
+        </section>
+
+        <section id="pricing" className="section">
+          <Reveal>
+            <div className="pitch">
+              <div className="pitch__glow" aria-hidden="true" />
+              <p className="eyebrow">Made for main street</p>
+              <h2>
+                Big-studio creative,{' '}
+                <span className="grad">small-business pricing</span>
+              </h2>
+              <p className="pitch__lead">
+                We focus on small businesses and not-for-profits — the teams who
+                need standout branding and marketing the most. Fair, transparent,
+                budget-friendly pricing with no bloated agency retainers.
+              </p>
+              <div className="pitch__tags">
+                <span className="pill">Small businesses</span>
+                <span className="pill">Not-for-profits</span>
+                <span className="pill pill--accent">Affordable, flat pricing</span>
+              </div>
+            </div>
+          </Reveal>
         </section>
 
         <section id="work" className="section">
@@ -174,18 +199,19 @@ function App() {
 
         <section id="contact" className="section contact">
           <Reveal className="contact__intro">
-            <p className="eyebrow">Let's talk</p>
+            <p className="eyebrow">Start here</p>
             <h2>
-              Have a project in <span className="grad">mind?</span>
+              Add your project <span className="grad">online</span>
             </h2>
             <p>
-              Tell us about your goals and we'll put together a plan. No pitch
-              decks required — just a conversation about what you want to build.
+              Tell us about your project right here on the website — no calls
+              required to get going. Fill out the form and we'll reply within one
+              business day with next steps.
             </p>
             <ul className="contact__list">
-              <li>Kickoff call within 48 hours</li>
+              <li>Affordable rates for small businesses &amp; not-for-profits</li>
               <li>Transparent, fixed-scope proposals</li>
-              <li>Senior team on every project</li>
+              <li>Brand, marketing, SEO, social &amp; web — all in one place</li>
             </ul>
             <p className="contact__where">
               <span className="badge__dot" aria-hidden="true" />
@@ -200,7 +226,9 @@ function App() {
 
       <footer className="footer">
         <span>© {new Date().getFullYear()} Galbore Media — Ontario, Canada</span>
-        <span className="footer__made">Brand · Marketing · Web &amp; Apps</span>
+        <span className="footer__made">
+          Brand · Marketing · SEO · Social · Web &amp; Apps
+        </span>
       </footer>
     </div>
   )

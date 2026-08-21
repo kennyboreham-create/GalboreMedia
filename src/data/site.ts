@@ -30,6 +30,18 @@ export const services: Service[] = [
     icon: 'target',
   },
   {
+    title: 'SEO',
+    description:
+      'Search engine optimization that gets you found by the people already looking for you.',
+    icon: 'search',
+  },
+  {
+    title: 'Social Media',
+    description:
+      'Scroll-stopping content and day-to-day management that grow your community and reach.',
+    icon: 'social',
+  },
+  {
     title: 'Websites & Apps',
     description:
       'Fast, beautiful websites and apps engineered to convert, delight, and scale.',
@@ -41,14 +53,14 @@ export const projects: Project[] = [
   { title: 'Northwind Launch', client: 'Northwind', category: 'Brand', year: '2026' },
   { title: 'Lumen Growth Engine', client: 'Lumen Labs', category: 'Marketing', year: '2025' },
   { title: 'Tidal Commerce App', client: 'Tidal', category: 'Web', year: '2025' },
+  { title: 'Harbour Food Bank', client: 'Harbour FB', category: 'Social', year: '2025' },
   { title: 'Ember Rebrand', client: 'Ember', category: 'Brand', year: '2024' },
   { title: 'Atlas Ad Campaign', client: 'Atlas', category: 'Marketing', year: '2024' },
-  { title: 'Kestrel Portal', client: 'Kestrel', category: 'Web', year: '2023' },
 ]
 
 export const stats: Stat[] = [
   { value: '12+', label: 'Years crafting brands' },
   { value: '240', label: 'Projects shipped' },
-  { value: '3.5x', label: 'Avg. growth for clients' },
+  { value: '100%', label: 'Small biz & nonprofit focused' },
   { value: '4.9', label: 'Average client rating' },
 ]

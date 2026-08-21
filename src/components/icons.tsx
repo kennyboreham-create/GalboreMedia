@@ -25,6 +25,21 @@ const paths: Record<string, ReactElement> = {
       <path d="M2 8h20M8 12l-2 2 2 2M16 12l2 2-2 2M13 11l-2 6" />
     </>
   ),
+  search: (
+    <>
+      <circle cx="10" cy="10" r="6" />
+      <path d="M20 20l-5.5-5.5" />
+      <path d="M7.5 11l1.8-2 1.6 1.3 2.1-2.6" />
+    </>
+  ),
+  social: (
+    <>
+      <circle cx="7" cy="12" r="3" />
+      <circle cx="17" cy="6" r="3" />
+      <circle cx="17" cy="18" r="3" />
+      <path d="M9.5 10.5l5-3M9.5 13.5l5 3" />
+    </>
+  ),
 }
 
 export function Icon({ name }: IconProps) {

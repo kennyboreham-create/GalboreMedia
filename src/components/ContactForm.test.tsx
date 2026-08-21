@@ -8,7 +8,7 @@ describe('ContactForm', () => {
     const user = userEvent.setup()
     render(<ContactForm />)
 
-    await user.click(screen.getByRole('button', { name: /start a project/i }))
+    await user.click(screen.getByRole('button', { name: /add my project/i }))
 
     expect(screen.getByText(/tell us your name/i)).toBeInTheDocument()
     expect(screen.getByText(/email is required/i)).toBeInTheDocument()
@@ -25,7 +25,7 @@ describe('ContactForm', () => {
       screen.getByLabelText(/project details/i),
       'We would love a launch film for our new product.',
     )
-    await user.click(screen.getByRole('button', { name: /start a project/i }))
+    await user.click(screen.getByRole('button', { name: /add my project/i }))
 
     expect(await screen.findByText(/message received/i)).toBeInTheDocument()
   })

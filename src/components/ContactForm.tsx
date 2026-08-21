@@ -90,7 +90,7 @@ export function ContactForm() {
       </div>
 
       <button type="submit" className="btn btn--primary btn--block">
-        Start a project
+        Add my project
       </button>
     </form>
   )
