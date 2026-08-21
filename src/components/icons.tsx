@@ -5,30 +5,24 @@ interface IconProps {
 }
 
 const paths: Record<string, ReactElement> = {
-  film: (
+  megaphone: (
     <>
-      <rect x="3" y="4" width="18" height="16" rx="2" />
-      <path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4" />
+      <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1z" />
+      <path d="M10 6l8-3v18l-8-3" />
+      <path d="M18 8a4 4 0 0 1 0 8" />
     </>
   ),
-  brand: (
+  target: (
     <>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 3a9 9 0 0 1 0 18M8 8l8 8M16 8l-8 8" />
+      <path d="M3 3v18h18" />
+      <path d="M7 15l4-4 3 3 5-6" />
+      <path d="M19 8h1V7" />
     </>
   ),
-  web: (
+  code: (
     <>
-      <rect x="3" y="4" width="18" height="14" rx="2" />
-      <path d="M3 9h18M8 21h8M12 18v3" />
-    </>
-  ),
-  social: (
-    <>
-      <circle cx="7" cy="12" r="3" />
-      <circle cx="17" cy="6" r="3" />
-      <circle cx="17" cy="18" r="3" />
-      <path d="M9.5 10.5l5-3M9.5 13.5l5 3" />
+      <rect x="2" y="4" width="20" height="14" rx="2" />
+      <path d="M2 8h20M8 12l-2 2 2 2M16 12l2 2-2 2M13 11l-2 6" />
     </>
   ),
 }
@@ -45,7 +39,7 @@ export function Icon({ name }: IconProps) {
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      {paths[name] ?? paths.brand}
+      {paths[name] ?? paths.megaphone}
     </svg>
   )
 }

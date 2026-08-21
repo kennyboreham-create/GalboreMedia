@@ -18,43 +18,37 @@ export interface Stat {
 
 export const services: Service[] = [
   {
-    title: 'Film & Motion',
+    title: 'Brand Awareness',
     description:
-      'Cinematic brand films, documentaries, and motion graphics shot and edited in-house.',
-    icon: 'film',
+      'Bold identities and campaigns that make people stop, look, and remember your name.',
+    icon: 'megaphone',
   },
   {
-    title: 'Brand & Identity',
+    title: 'Marketing',
     description:
-      'Naming, visual systems, and guidelines that make a brand instantly recognizable.',
-    icon: 'brand',
+      'Data-driven marketing that turns attention into customers and predictable growth.',
+    icon: 'target',
   },
   {
-    title: 'Digital & Web',
+    title: 'Websites & Apps',
     description:
-      'Fast, accessible websites and campaigns engineered to convert and delight.',
-    icon: 'web',
-  },
-  {
-    title: 'Social & Content',
-    description:
-      'Always-on content programs that keep audiences engaged across every platform.',
-    icon: 'social',
+      'Fast, beautiful websites and apps engineered to convert, delight, and scale.',
+    icon: 'code',
   },
 ]
 
 export const projects: Project[] = [
-  { title: 'Northwind Launch', client: 'Northwind', category: 'Film', year: '2026' },
-  { title: 'Lumen Rebrand', client: 'Lumen Labs', category: 'Brand', year: '2025' },
-  { title: 'Tidal Commerce', client: 'Tidal', category: 'Web', year: '2025' },
-  { title: 'Ember Festival', client: 'Ember', category: 'Social', year: '2024' },
-  { title: 'Atlas Docuseries', client: 'Atlas', category: 'Film', year: '2024' },
-  { title: 'Kestrel Identity', client: 'Kestrel', category: 'Brand', year: '2023' },
+  { title: 'Northwind Launch', client: 'Northwind', category: 'Brand', year: '2026' },
+  { title: 'Lumen Growth Engine', client: 'Lumen Labs', category: 'Marketing', year: '2025' },
+  { title: 'Tidal Commerce App', client: 'Tidal', category: 'Web', year: '2025' },
+  { title: 'Ember Rebrand', client: 'Ember', category: 'Brand', year: '2024' },
+  { title: 'Atlas Ad Campaign', client: 'Atlas', category: 'Marketing', year: '2024' },
+  { title: 'Kestrel Portal', client: 'Kestrel', category: 'Web', year: '2023' },
 ]
 
 export const stats: Stat[] = [
-  { value: '12+', label: 'Years crafting stories' },
+  { value: '12+', label: 'Years crafting brands' },
   { value: '240', label: 'Projects shipped' },
-  { value: '38', label: 'Industry awards' },
+  { value: '3.5x', label: 'Avg. growth for clients' },
   { value: '4.9', label: 'Average client rating' },
 ]

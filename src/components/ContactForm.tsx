@@ -33,7 +33,7 @@ export function ContactForm() {
           ✓
         </div>
         <h3>Thanks — message received.</h3>
-        <p>A producer from GalboreMedia will be in touch within one business day.</p>
+        <p>The Galbore Media team will be in touch within one business day.</p>
         <button
           type="button"
           className="btn btn--ghost"
