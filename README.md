@@ -33,7 +33,7 @@ If you do not have a lockfile yet, use `npm install` instead of `npm ci`.
 ```
 src/
   components/   Reusable UI (contact form, icons)
-  data/         Static site content (services, projects, stats)
+  data/         Static site content (services, stats)
   lib/          Pure helpers (form validation) + unit tests
   test/         Test setup
   App.tsx       Page composition
