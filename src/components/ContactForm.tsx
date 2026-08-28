@@ -32,7 +32,7 @@ export function ContactForm() {
         <div className="contact-success__check" aria-hidden="true">
           ✓
         </div>
-        <h3>Thanks — message received.</h3>
+        <h3>Thanks. Message received.</h3>
         <p>The Galbore Media team will be in touch within one business day.</p>
         <button
           type="button"

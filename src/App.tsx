@@ -41,7 +41,7 @@ function App() {
           <Reveal>
             <span className="badge">
               <span className="badge__dot" aria-hidden="true" />
-              Ontario, Canada — creative studio
+              Ontario, Canada creative studio
             </span>
           </Reveal>
           <Reveal delay={80}>
@@ -53,7 +53,7 @@ function App() {
           <Reveal delay={160}>
             <p className="hero__lead">
               Galbore Media is a bold, affordable creative studio for small
-              businesses and not-for-profits — brand awareness, marketing, SEO,
+              businesses and not-for-profits: brand awareness, marketing, SEO,
               social media, and websites &amp; apps, all in one place.
             </p>
           </Reveal>
@@ -125,7 +125,7 @@ function App() {
                 <span className="grad">small-business pricing</span>
               </h2>
               <p className="pitch__lead">
-                We focus on small businesses and not-for-profits — the teams who
+                We focus on small businesses and not-for-profits: the teams who
                 need standout branding and marketing the most. Fair, transparent,
                 budget-friendly pricing with no bloated agency retainers.
               </p>
@@ -145,14 +145,14 @@ function App() {
               Add your project <span className="grad">online</span>
             </h2>
             <p>
-              Tell us about your project right here on the website — no calls
+              Tell us about your project right here on the website. No calls
               required to get going. Fill out the form and we'll reply within one
               business day with next steps.
             </p>
             <ul className="contact__list">
               <li>Affordable rates for small businesses &amp; not-for-profits</li>
               <li>Transparent, fixed-scope proposals</li>
-              <li>Brand, marketing, SEO, social &amp; web — all in one place</li>
+              <li>Brand, marketing, SEO, social &amp; web, all in one place</li>
             </ul>
             <p className="contact__where">
               <span className="badge__dot" aria-hidden="true" />
@@ -166,7 +166,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <span>© {new Date().getFullYear()} Galbore Media — Ontario, Canada</span>
+        <span>© {new Date().getFullYear()} Galbore Media, Ontario, Canada</span>
         <span className="footer__made">
           Brand · Marketing · SEO · Social · Web &amp; Apps
         </span>
