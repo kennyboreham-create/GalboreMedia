@@ -1,11 +1,7 @@
-import { useState } from 'react'
 import { ContactForm } from './components/ContactForm'
 import { Icon } from './components/icons'
 import { Reveal } from './components/Reveal'
-import { projects, services, stats } from './data/site'
-
-const categories = ['All', 'Brand', 'Marketing', 'Web', 'Social'] as const
-type Category = (typeof categories)[number]
+import { services, stats } from './data/site'
 
 const marqueeItems = [
   'Brand Awareness',
@@ -17,13 +13,6 @@ const marqueeItems = [
 ]
 
 function App() {
-  const [filter, setFilter] = useState<Category>('All')
-
-  const visibleProjects =
-    filter === 'All'
-      ? projects
-      : projects.filter((project) => project.category === filter)
-
   return (
     <div className="page">
       <div className="aurora" aria-hidden="true">
@@ -40,7 +29,6 @@ function App() {
         <nav className="nav__links" aria-label="Primary">
           <a href="#services">Services</a>
           <a href="#pricing">Who we help</a>
-          <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </nav>
         <a className="btn btn--primary nav__cta" href="#contact">
@@ -53,7 +41,7 @@ function App() {
           <Reveal>
             <span className="badge">
               <span className="badge__dot" aria-hidden="true" />
-              Ontario, Canada — creative studio
+              Ontario, Canada creative studio
             </span>
           </Reveal>
           <Reveal delay={80}>
@@ -65,7 +53,7 @@ function App() {
           <Reveal delay={160}>
             <p className="hero__lead">
               Galbore Media is a bold, affordable creative studio for small
-              businesses and not-for-profits — brand awareness, marketing, SEO,
+              businesses and not-for-profits: brand awareness, marketing, SEO,
               social media, and websites &amp; apps, all in one place.
             </p>
           </Reveal>
@@ -73,9 +61,6 @@ function App() {
             <div className="hero__actions">
               <a className="btn btn--primary btn--lg" href="#contact">
                 Add your project
-              </a>
-              <a className="btn btn--ghost btn--lg" href="#work">
-                See our work
               </a>
             </div>
           </Reveal>
@@ -140,7 +125,7 @@ function App() {
                 <span className="grad">small-business pricing</span>
               </h2>
               <p className="pitch__lead">
-                We focus on small businesses and not-for-profits — the teams who
+                We focus on small businesses and not-for-profits: the teams who
                 need standout branding and marketing the most. Fair, transparent,
                 budget-friendly pricing with no bloated agency retainers.
               </p>
@@ -153,50 +138,6 @@ function App() {
           </Reveal>
         </section>
 
-        <section id="work" className="section">
-          <Reveal>
-            <div className="section__head">
-              <p className="eyebrow">Selected work</p>
-              <h2>Recent projects</h2>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div className="filters" role="tablist" aria-label="Filter projects">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  type="button"
-                  role="tab"
-                  aria-selected={filter === category}
-                  className={'chip' + (filter === category ? ' chip--active' : '')}
-                  onClick={() => setFilter(category)}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </Reveal>
-
-          <div className="work-grid">
-            {visibleProjects.map((project, i) => (
-              <Reveal delay={i * 80} key={project.title}>
-                <article className="work-card">
-                  <div className="work-card__media" aria-hidden="true">
-                    <span className="work-card__tag">{project.category}</span>
-                  </div>
-                  <div className="work-card__body">
-                    <h3>{project.title}</h3>
-                    <p>
-                      {project.client} · {project.year}
-                    </p>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
         <section id="contact" className="section contact">
           <Reveal className="contact__intro">
             <p className="eyebrow">Start here</p>
@@ -204,14 +145,14 @@ function App() {
               Add your project <span className="grad">online</span>
             </h2>
             <p>
-              Tell us about your project right here on the website — no calls
+              Tell us about your project right here on the website. No calls
               required to get going. Fill out the form and we'll reply within one
               business day with next steps.
             </p>
             <ul className="contact__list">
               <li>Affordable rates for small businesses &amp; not-for-profits</li>
               <li>Transparent, fixed-scope proposals</li>
-              <li>Brand, marketing, SEO, social &amp; web — all in one place</li>
+              <li>Brand, marketing, SEO, social &amp; web, all in one place</li>
             </ul>
             <p className="contact__where">
               <span className="badge__dot" aria-hidden="true" />
@@ -225,7 +166,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <span>© {new Date().getFullYear()} Galbore Media — Ontario, Canada</span>
+        <span>© {new Date().getFullYear()} Galbore Media, Ontario, Canada</span>
         <span className="footer__made">
           Brand · Marketing · SEO · Social · Web &amp; Apps
         </span>
