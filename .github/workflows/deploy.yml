@@ -11,8 +11,7 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment; skip runs queued between an
-# in-progress run and the latest queued run.
+# Allow only one concurrent deployment.
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -33,20 +32,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # The site is served at the domain root (public/CNAME -> galbore.ca), so
+      # the default Vite base ("/") is correct and no base override is needed.
       - name: Build
-        # With a custom domain the site is served at "/"; otherwise it is served
-        # from the project subpath on <owner>.github.io.
-        env:
-          BASE_PATH: ${{ vars.CUSTOM_DOMAIN != '' && '/' || format('/{0}/', github.event.repository.name) }}
         run: npm run build
-
-      # Bind the site to a custom domain (e.g. a GoDaddy domain) by setting the
-      # repository Actions variable CUSTOM_DOMAIN (Settings -> Secrets and
-      # variables -> Actions -> Variables). When unset, the site publishes to
-      # the default <owner>.github.io/<repo>/ URL instead.
-      - name: Configure custom domain
-        if: vars.CUSTOM_DOMAIN != ''
-        run: echo "${{ vars.CUSTOM_DOMAIN }}" > dist/CNAME
 
       # Single-page fallback so deep links resolve to the app entry point.
       - name: Add SPA fallback
