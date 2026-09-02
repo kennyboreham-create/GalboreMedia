@@ -50,12 +50,12 @@ export const services: Service[] = [
 ]
 
 export const projects: Project[] = [
-  { title: 'Northwind Launch', client: 'Northwind', category: 'Brand', year: '2026' },
-  { title: 'Lumen Growth Engine', client: 'Lumen Labs', category: 'Marketing', year: '2025' },
-  { title: 'Tidal Commerce App', client: 'Tidal', category: 'Web', year: '2025' },
-  { title: 'Harbour Food Bank', client: 'Harbour FB', category: 'Social', year: '2025' },
-  { title: 'Ember Rebrand', client: 'Ember', category: 'Brand', year: '2024' },
-  { title: 'Atlas Ad Campaign', client: 'Atlas', category: 'Marketing', year: '2024' },
+  { title: 'Sporff', client: 'Sports For Fitness Youth Club', category: 'Web', year: '2024' },
+  { title: 'Learning With Lukey Buke', client: 'LWLB', category: 'Brand', year: '2025' },
+  { title: 'Coaching Hockey', client: 'Coaching Hockey', category: 'Web', year: '2026' },
+  { title: 'TypoLearney', client: 'TypoLearney', category: 'Marketing', year: '2026' },
+  { title: 'Tryout Aid', client: 'TA', category: 'Web', year: '2025' },
+  { title: 'AOLB', client: 'AOLB', category: 'Marketing', year: '2024' },
 ]
 
 export const stats: Stat[] = [
