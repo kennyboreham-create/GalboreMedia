@@ -53,7 +53,7 @@ function App() {
           <Reveal>
             <span className="badge">
               <span className="badge__dot" aria-hidden="true" />
-              Ontario, Canada — creative studio
+              Ontario, Canada
             </span>
           </Reveal>
           <Reveal delay={80}>
