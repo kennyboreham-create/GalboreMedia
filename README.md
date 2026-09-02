@@ -40,6 +40,51 @@ src/
   main.tsx      App entry point
 ```
 
+## Deployment & custom domain (`galbore.ca`)
+
+The site is a static bundle hosted for free on **GitHub Pages** and served at the
+custom domain **`galbore.ca`** (registered on GoDaddy). The
+[`Deploy to GitHub Pages`](.github/workflows/deploy.yml) workflow builds the site
+and publishes it on every push to `main`. The domain is bound via the committed
+[`public/CNAME`](public/CNAME) file, which Vite copies to `dist/CNAME` at build
+time — no per-repo variable is needed. To use a different domain later, just edit
+that file.
+
+### 1. Enable GitHub Pages (one time)
+
+In the repository, go to **Settings → Pages** and set **Source** to
+**GitHub Actions**. The next push to `main` (or a manual _Run workflow_) publishes
+the site. After the first deploy, confirm `galbore.ca` appears under
+**Settings → Pages → Custom domain**, and enable **Enforce HTTPS** once GitHub has
+issued the TLS certificate.
+
+### 2. Point `galbore.ca` at GitHub Pages (GoDaddy DNS)
+
+In GoDaddy: **My Products → `galbore.ca` → DNS → Manage DNS**.
+
+For the **apex/root domain** (`galbore.ca`) add four `A` records on host `@`:
+
+| Type | Host | Value           |
+| ---- | ---- | --------------- |
+| A    | @    | 185.199.108.153 |
+| A    | @    | 185.199.109.153 |
+| A    | @    | 185.199.110.153 |
+| A    | @    | 185.199.111.153 |
+
+(Optionally also add `AAAA` records for IPv6: `2606:50c0:8000::153`,
+`2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`.)
+
+To also serve **`www.galbore.ca`** add a `CNAME` record (GoDaddy does not allow a
+`CNAME` on the apex, so the apex uses the `A` records above):
+
+| Type  | Host | Value                          |
+| ----- | ---- | ------------------------------ |
+| CNAME | www  | kennyboreham-create.github.io. |
+
+Remove any default GoDaddy "Parked"/forwarding `A` record on `@` first. DNS changes
+can take up to ~1 hour to propagate; GitHub then issues the TLS certificate
+automatically.
+
 ## Cloud Agent environment
 
 The Cloud Agent development environment is defined in
