@@ -1,35 +1,536 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#07070d" />
-    <meta
-      name="description"
-      content="Galbore Media is an affordable Ontario, Canada creative studio for small businesses and not-for-profits — brand awareness, marketing, SEO, social media, and websites & apps."
-    />
-    <meta
-      name="keywords"
-      content="Galbore Media, Ontario, Canada, small business marketing, not-for-profit marketing, affordable branding, SEO, social media management, web design, app development"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_CA" />
-    <meta
-      property="og:title"
-      content="Galbore Media — Affordable branding, marketing, SEO & web for small business"
-    />
-    <meta
-      property="og:description"
-      content="An Ontario, Canada creative studio focused on small businesses and not-for-profits: brand awareness, marketing, SEO, social media, and websites & apps at fair, flat pricing."
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <title>
-      Galbore Media — Affordable Branding, Marketing, SEO &amp; Web | Ontario, Canada
-    </title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galbore Media — Custom & Personalized Web Apps | Ontario, Canada</title>
+  <style>
+    :root {
+      --bg: #0b0b12;
+      --card-bg: #13131f;
+      --text: #f0f0f8;
+      --text-muted: #a0a0b8;
+      --accent-pink: #d946ef;
+      --accent-purple: #8b5cf6;
+      --accent-blue: #3b82f6;
+      --border: #232338;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-dot {
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      border-radius: 50%;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 9999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-blue));
+      color: white;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #10b981;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple), var(--accent-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      max-width: 900px;
+      margin: 40px auto 100px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 30px 0;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: 0 auto 100px;
+      padding: 0 20px;
+    }
+
+    .section-tag {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--accent-pink);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+
+    /* Feature Web App Section */
+    .featured-app-card {
+      background: linear-gradient(135deg, rgba(217, 70, 239, 0.1), rgba(59, 130, 246, 0.1));
+      border: 1px solid rgba(217, 70, 239, 0.3);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .featured-badge {
+      background: var(--accent-pink);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .project-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      text-transform: uppercase;
+    }
+
+    .project-tag.web-app {
+      background: rgba(217, 70, 239, 0.15);
+      color: var(--accent-pink);
+      border-color: rgba(217, 70, 239, 0.3);
+    }
+
+    .project-year {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Form Section */
+    .form-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .featured-app-card, .form-container { grid-template-columns: 1fr; }
+      .stats { flex-direction: column; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-dot"></div>
+      Galbore Media
+    </div>
+    <a href="#contact" class="btn btn-primary">Add your project</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Ontario, Canada
+    </div>
+    <h1>Personalized Web Apps tailored to your business.</h1>
+    <p class="hero-sub">
+      Galbore Media builds custom, interactive web applications that automate workflows and drive growth, alongside full-service branding, marketing, SEO, and web development.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Build Your Web App</a>
+      <a href="#work" class="btn btn-secondary">See our work</a>
+    </div>
+  </section>
+
+  <!-- Key Metrics -->
+  <div class="stats">
+    <div>
+      <div class="stat-number">12+</div>
+      <div class="stat-label">Years crafting software & brands</div>
+    </div>
+    <div>
+      <div class="stat-number">240</div>
+      <div class="stat-label">Projects shipped</div>
+    </div>
+    <div>
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Small biz & nonprofit focused</div>
+    </div>
+    <div>
+      <div class="stat-number">4.9</div>
+      <div class="stat-label">Average client rating</div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">Built for modern growth</h2>
+
+    <!-- Spotlight Feature: Web Apps -->
+    <div class="featured-app-card">
+      <div>
+        <span class="featured-badge">Core Specialty</span>
+        <h2>Personalized Web Applications</h2>
+        <p style="color: var(--text-muted); margin: 12px 0 20px;">
+          Bespoke tools, custom client portals, and tailored internal software designed specifically around your unique operations.
+        </p>
+        <ul style="color: var(--text-muted); padding-left: 20px; line-height: 1.8;">
+          <li>Automated client portals & dashboards</li>
+          <li>Custom SaaS & internal workflow tools</li>
+          <li>High-performing, responsive web interfaces</li>
+        </ul>
+      </div>
+      <div>
+        <div style="background: var(--bg); border: 1px solid var(--border); padding: 20px; border-radius: 8px;">
+          <p style="font-size: 0.85rem; color: var(--accent-pink); font-family: monospace;">// Custom App Engine</p>
+          <p style="font-size: 0.95rem; margin-top: 10px;">We replace messy spreadsheets and generic software with scalable, personalized web applications made just for you.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Core Services -->
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Websites</h3>
+        <p>Fast, beautiful websites engineered to convert visitors, showcase your brand, and scale smoothly.</p>
+      </div>
+      <div class="service-card">
+        <h3>Brand Awareness</h3>
+        <p>Bold identities and creative strategies that make people stop, look, and remember your name.</p>
+      </div>
+      <div class="service-card">
+        <h3>Marketing</h3>
+        <p>Data-driven marketing campaigns that turn audience attention into predictable sales growth.</p>
+      </div>
+      <div class="service-card">
+        <h3>SEO</h3>
+        <p>Search engine optimization that ensures you get found by clients actively searching for your services.</p>
+      </div>
+      <div class="service-card">
+        <h3>Social Media</h3>
+        <p>Scroll-stopping content and day-to-day management that grow your community and expand your reach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Work (Newest to Oldest) -->
+  <section id="work">
+    <div class="section-tag">Selected Work</div>
+    <h2 class="section-title">Recent projects (Newest to Oldest)</h2>
+
+    <div class="projects-grid">
+      <!-- 2026 Projects -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-tag web-app">Web / Web App</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h3>Coaching Hockey</h3>
+        <p>Interactive sports management portal and customized application for coaches and teams.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-tag">Marketing</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h3>TypoLearney</h3>
+        <p>Strategic positioning and user acquisition campaign for an educational platform.</p>
+      </div>
+
+      <!-- 2025 Projects -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-tag web-app">Web / Web App</span>
+          <span class="project-year">2025</span>
+        </div>
+        <h3>Tryout Aid</h3>
+        <p>Tailored evaluation software and web app for sports tryouts and talent management.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-tag">Brand</span>
+          <span class="project-year">2025</span>
+        </div>
+        <h3>Learning With Lukey Buke</h3>
+        <p>Full brand identity, visual guidelines, and digital asset suite for an educational brand.</p>
+      </div>
+
+      <!-- 2024 Projects -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-tag web-app">Web / Web App</span>
+          <span class="project-year">2024</span>
+        </div>
+        <h3>Sporff</h3>
+        <p>Digital platform built for the Sports For Fitness Youth Club community.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-tag">Marketing</span>
+          <span class="project-year">2024</span>
+        </div>
+        <h3>AOLB</h3>
+        <p>Targeted marketing and audience engagement strategy for digital growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="form-container">
+      <div>
+        <div class="section-tag">Start Here</div>
+        <h2>Add your project online</h2>
+        <p style="color: var(--text-muted); margin: 16px 0 24px;">
+          Tell us about the custom web application or service you need. We'll reply within one business day with next steps.
+        </p>
+        <ul style="color: var(--text-muted); list-style: none; line-height: 2;">
+          <li>✓ Affordable rates for small businesses & non-profits</li>
+          <li>✓ Transparent, fixed-scope proposals</li>
+          <li>✓ Web apps, branding, marketing, SEO, social & web</li>
+        </ul>
+      </div>
+      <form onsubmit="event.preventDefault();">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Ada Lovelace">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+          <label for="details">Project details</label>
+          <textarea id="details" rows="4" placeholder="Tell us what custom web app or project you're building..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Add my project</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Galbore Media — Ontario, Canada</p>
+    <p style="margin-top: 6px;">Personalized Web Apps · Websites · Branding · Marketing · SEO · Social</p>
+  </footer>
+
+</body>
 </html>
