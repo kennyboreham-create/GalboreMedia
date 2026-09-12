@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing & Plans</title>
+  <style>
+    :root {
+      --bg-dark: #0a0b10;
+      --card-bg: #12131c;
+      --card-border: #1e2030;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-purple: #8b5cf6;
+      --accent-blue: #3b82f6;
+      --button-gradient: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+      --button-hover: linear-gradient(135deg, #9333ea 0%, #4f46e5 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-purple);
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-description {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      min-height: 3rem;
+    }
+
+    .price-container {
+      margin-bottom: 1.5rem;
+    }
+
+    .price {
+      font-size: 2.75rem;
+      font-weight: 800;
+    }
+
+    .price-period {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .domain-preview {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px dashed var(--card-border);
+      border-radius: 8px;
+      padding: 0.6rem 0.8rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--accent-purple);
+      margin-bottom: 1.5rem;
+      word-break: break-all;
+    }
+
+    .features-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .features-list li {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .features-list li::before {
+      content: "✓";
+      color: var(--accent-purple);
+      font-weight: bold;
+      margin-right: 0.75rem;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 0.85rem 1.5rem;
+      border-radius: 9999px;
+      background: var(--button-gradient);
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Transparent Pricing</h1>
+      <p>Select the plan or service that fits your business needs.</p>
+    </div>
+
+    <div class="pricing-grid">
+      
+      <!-- Requested Plan -->
+      <div class="card">
+        <div>
+          <h2 class="card-title">Static Web Page</h2>
+          <p class="card-description">Create a page that is best for telling the customers what you are about. Includes hosting with no custom domain needed.</p>
+          
+          <div class="price-container">
+            <span class="price">$500</span>
+            <span class="price-period">/ year</span>
+          </div>
+
+          <div class="domain-preview">
+            yourbusiness.galbore.ca
+          </div>
+
+          <ul class="features-list">
+            <li>Single custom static web page</li>
+            <li>Fully responsive design</li>
+            <li>Hosted sub-domain setup</li>
+            <li>Optimized performance & speed</li>
+          </ul>
+        </div>
+
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+
+      <!-- Placeholder Product 1 -->
+      <div class="card">
+        <div>
+          <h2 class="card-title">Custom Web Application</h2>
+          <p class="card-description">Bespoke tools, custom client portals, and tailored internal software for operations.</p>
+          
+          <div class="price-container">
+            <span class="price">$1,200</span>
+            <span class="price-period">/ project</span>
+          </div>
+
+          <div class="domain-preview">
+            custom-app.galbore.ca
+          </div>
+
+          <ul class="features-list">
+            <li>Automated client portal</li>
+            <li>Custom database integration</li>
+            <li>Scalable cloud architecture</li>
+            <li>Ongoing support & maintenance</li>
+          </ul>
+        </div>
+
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+
+      <!-- Placeholder Product 2 -->
+      <div class="card">
+        <div>
+          <h2 class="card-title">Brand & SEO Package</h2>
+          <p class="card-description">Complete visual identity design paired with search engine optimization to grow online presence.</p>
+          
+          <div class="price-container">
+            <span class="price">$750</span>
+            <span class="price-period">/ one-time</span>
+          </div>
+
+          <div class="domain-preview">
+            growth.galbore.ca
+          </div>
+
+          <ul class="features-list">
+            <li>Logo & brand guidelines</li>
+            <li>On-page SEO optimization</li>
+            <li>Social media asset kit</li>
+            <li>Keywords setup & search tracking</li>
+          </ul>
+        </div>
+
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
